@@ -9,8 +9,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # gestion de volumen
-# docker volume create vol_contacts
-# docker run -p 8080:8080 -d -v vol_contacts:/usr/src/app/data acabreroguni/contacts:v01.00
+# docker volume create vol_apartments
+# docker run -p 8080:8080 -d -v vol_apartments:/usr/src/app/data acabreroguni/apartments:v01.00
 
 
 RUN npm install
