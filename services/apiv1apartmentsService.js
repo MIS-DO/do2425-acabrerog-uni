@@ -3,8 +3,20 @@ var db = require('../db');
 
 
 module.exports.getApartments = function getApartments(req, res) {
-    res.send({
-        message: 'This is the mockup controller for getApartments'
+    console.info("New GET request to /apartments/");
+    db.find({}, function (err, allApartments) {
+        if (err) {
+            console.error('Error getting data from DB');
+            res.status(500).send(); // internal server error
+        } else {
+            if (allApartments.length > 0) {
+                console.info("Sending apartments: " + JSON.stringify(allApartments, 2, null));
+                res.send(allApartments);
+            } else {
+                console.warn("There are no apartments");
+                res.status(404).send(); // not found
+            }
+        }
     });
 }
 
