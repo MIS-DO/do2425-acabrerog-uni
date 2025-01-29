@@ -1,6 +1,8 @@
 'use strict'
 
 var db = require('../db');
+//const console = require('../console');
+
 
 
 module.exports.findByapartmentRef = function findByapartmentRef(req, res) {
