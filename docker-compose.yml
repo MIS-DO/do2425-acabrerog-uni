@@ -5,10 +5,14 @@ services:
     depends_on:
       - mongo
     ports:
-      - "${PORT:-8080}:8080"
+      - "${PORT:-8081}:8080"
+    # volumes:
+    #   - "./logs:/usr/src/app/logs"
     environment:
       - NODE_ENV=production
   mongo:
     image: "mongo"
     ports:
       - "27017:27017"
+    # volumes:
+    #   - "./data:/data/db"
